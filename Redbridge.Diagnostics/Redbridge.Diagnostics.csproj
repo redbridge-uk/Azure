@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Redbridge.SDK" Version="2.1.131.1" />
+    <PackageReference Include="Redbridge.SDK" Version="2.1.137.1" />
   </ItemGroup>
 
 </Project>

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Redbridge.Diagnostics.Appli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Redbridge.Diagnostics.ApplicationInsights.Tests", "Redbridge.Diagnostics.ApplicationInsights.Tests\Redbridge.Diagnostics.ApplicationInsights.Tests.csproj", "{AC633ECC-598C-497F-AF33-6CDC2A774FAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbridge.Diagnostics.Tests", "Redbridge.Diagnostics.Tests\Redbridge.Diagnostics.Tests.csproj", "{21C979BB-7918-4337-A659-E60E913019D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AC633ECC-598C-497F-AF33-6CDC2A774FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC633ECC-598C-497F-AF33-6CDC2A774FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC633ECC-598C-497F-AF33-6CDC2A774FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C979BB-7918-4337-A659-E60E913019D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C979BB-7918-4337-A659-E60E913019D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C979BB-7918-4337-A659-E60E913019D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C979BB-7918-4337-A659-E60E913019D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
