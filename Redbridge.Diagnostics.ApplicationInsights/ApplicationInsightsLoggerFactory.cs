@@ -39,7 +39,8 @@ namespace Redbridge.Diagnostics.ApplicationInsights
         private ApplicationInsightsLoggerFactory(LoggingSettings loggingSettings)
         {
             _loggingSettings = loggingSettings ?? throw new ArgumentNullException(nameof(loggingSettings));
-            _client = new TelemetryClient(new TelemetryConfiguration()) { };
+            var configuration = TelemetryConfiguration.CreateDefault();
+            _client = new TelemetryClient(configuration);
         }
 
         private ApplicationInsightsLoggerFactory (IApplicationSettingsRepository applicationSettings, LoggingSettings loggingSettings)
@@ -48,7 +49,13 @@ namespace Redbridge.Diagnostics.ApplicationInsights
             _loggingSettings = loggingSettings ?? throw new ArgumentNullException(nameof(loggingSettings));
             var key = applicationSettings.GetStringValueOrDefault(ApplicationInsightsInstrumentationConfigurationKey, string.Empty);
             var role = applicationSettings.GetStringValueOrDefault(ApplicationInsightsRoleNameKey, null);
-            _client = new TelemetryClient(new TelemetryConfiguration(key)) { };
+            var configuration = TelemetryConfiguration.CreateDefault();
+            configuration.InstrumentationKey = key;
+            _client = new TelemetryClient(configuration) { };
+            if (!string.IsNullOrEmpty(role))
+            {
+                _client.Context.Cloud.RoleName = role;
+            }
         }
 
         public ILogger Create<T>()
