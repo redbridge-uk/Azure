@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace Redbridge.Diagnostics
 {
@@ -11,17 +12,16 @@ namespace Redbridge.Diagnostics
 
 		public StopwatchLogger(ILogger logger, string format)
 		{
-			if (logger == null) throw new ArgumentNullException(nameof(logger));
-			_logger = logger;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 			_content = format;
-			_logger.WriteInfo($"Starting {format}");
+			_logger.LogInformation($"Starting {format}");
 			_stopwatch = Stopwatch.StartNew();
 		}
 
 		public void Dispose()
 		{
 			_stopwatch.Stop();
-			_logger.WriteInfo($"Finishing {_content} {_stopwatch.ElapsedMilliseconds}ms ({_stopwatch.ElapsedMilliseconds / 1000}secs)");
+			_logger.LogInformation($"Finishing {_content} {_stopwatch.ElapsedMilliseconds}ms ({_stopwatch.ElapsedMilliseconds / 1000}secs)");
 		}
 	}
 }
