@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.18.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.21.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Redbridge.SDK" Version="2.1.137.1" />
+    <PackageReference Include="Redbridge.SDK" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
